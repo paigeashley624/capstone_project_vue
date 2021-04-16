@@ -1,15 +1,25 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <span>
+        <router-link to="/">Home</router-link>
+      </span>
       |
-      <router-link to="/about">About</router-link>
+      <span>
+        <router-link to="/about">About</router-link>
+      </span>
       |
-      <router-link to="/signup">Signup</router-link>
+      <span v-if="!isLoggedIn()">
+        <router-link to="/signup">Signup</router-link>
+      </span>
       |
-      <router-link to="/login">Login</router-link>
+      <span v-if="!isLoggedIn()">
+        <router-link to="/login">Login</router-link>
+      </span>
       |
-      <router-link to="/logout">Logout</router-link>
+      <span>
+        <router-link to="/logout">Logout</router-link>
+      </span>
     </div>
     <router-view />
   </div>
@@ -37,3 +47,16 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>
