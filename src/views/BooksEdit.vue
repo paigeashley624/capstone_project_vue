@@ -1,5 +1,31 @@
 <template>
-  <div class="books-edit"></div>
+  <div class="books-edit">
+    <form v-on:submit="updateBook(book)">
+      <h1>Update Book</h1>
+      <!-- <ul>
+        <li class="text-danger" v-for="error in errors" v-bind:key="error">
+          {{ error }}
+        </li>
+      </ul> -->
+      <div class="form-group">
+        <label>Title:</label>
+        <input type="text" class="form-control" v-model="book.title" />
+      </div>
+      <div class="form-group">
+        <label>Author:</label>
+        <input type="text" class="form-control" v-model="book.author_name" />
+      </div>
+      <div class="form-group">
+        <label>Genre:</label>
+        <input type="text" class="form-control" v-model="book.genre" />
+      </div>
+      <div class="form-group">
+        <label>Image:</label>
+        <input type="text" class="form-control" v-model="book.img_url" />
+      </div>
+      <input type="submit" class="btn btn-primary" value="Submit" />
+    </form>
+  </div>
 </template>
 
 <script>
