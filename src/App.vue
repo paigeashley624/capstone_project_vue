@@ -20,6 +20,10 @@
       <span>
         <router-link to="/logout">Logout</router-link>
       </span>
+      |
+      <span>
+        <router-link to="booksnew">Create New Book</router-link>
+      </span>
     </div>
     <router-view />
   </div>

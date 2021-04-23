@@ -2,9 +2,8 @@
   <div class="books-show">
     <div class="container">
       <h2>{{ book.title }}</h2>
-      <p>{{ book.author_name }}</p>
-      <p>{{ book.genre }}</p>
-      <p>{{ book.img_url }}</p>
+      <p>{{ book.author_name }} | {{ book.genre }}</p>
+      <img v-bind:src="book.img_url" v-bind:alt="book.title" />
     </div>
     <div v-if="$parent.getUserId() == book.user_id">
       <router-link v-bind:to="`/books/${book.id}/edit`"></router-link>

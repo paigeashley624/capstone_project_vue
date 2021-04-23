@@ -26,7 +26,8 @@ const routes = [
   { path: "/logout", name: "logout", component: Logout },
   { path: "/books/:id/edit", name: "books-edit", component: BooksEdit },
   { path: "/books/:id", name: "books-show", component: BooksShow },
-  { path: "/books/new", name: "books-new", component: BooksNew }
+  { path: "/booksnew", name: "books-new", component: BooksNew },
+]
 
 const router = new VueRouter({
   mode: "history",
