@@ -39,36 +39,28 @@
       <div class="header-top">
         <div class="container">
           <div class="ht-left">
-            <div class="mail-service">
+            <!-- <div class="mail-service">
               <i class="fa fa-envelope"></i>
               hello.colorlib@gmail.com
             </div>
             <div class="phone-service">
               <i class="fa fa-phone"></i>
               +65 11.188.888
-            </div>
+            </div> -->
           </div>
           <div class="ht-right">
-            <a href="#" class="login-panel">
-              <i class="fa fa-user"></i>
-              Login
-            </a>
-            <div class="lan-selector">
-              <select class="language_drop" name="countries" id="countries" style="width: 300px">
-                <option value="yt" data-image="img/flag-1.jpg" data-imagecss="flag yt" data-title="English">
-                  English
-                </option>
-                <option value="yu" data-image="img/flag-2.jpg" data-imagecss="flag yu" data-title="Bangladesh">
-                  German
-                </option>
-              </select>
-            </div>
-            <div class="top-social">
-              <a href="#"><i class="ti-facebook"></i></a>
-              <a href="#"><i class="ti-twitter-alt"></i></a>
-              <a href="#"><i class="ti-linkedin"></i></a>
-              <a href="#"><i class="ti-pinterest"></i></a>
-            </div>
+            <span v-if="!isLoggedIn()">
+              <a href="/login" class="login-panel">
+                <i class="fa fa-user"></i>
+                Login
+              </a>
+            </span>
+            <span v-else="isLoggedIn()">
+              <a href="/logout" class="login-panel">
+                <i class="fa fa-user"></i>
+                Logout
+              </a>
+            </span>
           </div>
         </div>
       </div>
@@ -77,7 +69,7 @@
           <div class="row">
             <div class="col-lg-2 col-md-2">
               <div class="logo">
-                <a href="./index.html">
+                <a href="/">
                   <img src="img/logo.png" alt="" />
                 </a>
               </div>
@@ -154,7 +146,8 @@
       <div class="nav-item">
         <div class="container">
           <div class="nav-depart">
-            <div class="depart-btn">
+            <!-- Drop down bar  -->
+            <!-- <div class="depart-btn">
               <i class="ti-menu"></i>
               <span>All departments</span>
               <ul class="depart-hover">
@@ -167,32 +160,34 @@
                 <li><a href="#">Luxury Brands</a></li>
                 <li><a href="#">Brand Outdoor Apparel</a></li>
               </ul>
-            </div>
+            </div> -->
           </div>
           <nav class="nav-menu mobile-menu">
             <ul>
-              <li class="active"><a href="./index.html">Home</a></li>
-              <li><a href="./shop.html">Shop</a></li>
+              <li class="active"><a href="/">Home</a></li>
+              <!-- <li><a href="./shop.html">test</a></li> -->
               <li>
-                <a href="#">Collection</a>
+                <a href="#">Stash</a>
                 <ul class="dropdown">
                   <li><a href="#">Men's</a></li>
                   <li><a href="#">Women's</a></li>
                   <li><a href="#">Kid's</a></li>
                 </ul>
               </li>
-              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./blog.html">Browse</a></li>
               <li><a href="./contact.html">Contact</a></li>
               <li>
-                <a href="#">Pages</a>
-                <ul class="dropdown">
-                  <li><a href="./blog-details.html">Blog Details</a></li>
-                  <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                  <li><a href="./check-out.html">Checkout</a></li>
-                  <li><a href="./faq.html">Faq</a></li>
-                  <li><a href="./register.html">Register</a></li>
-                  <li><a href="./login.html">Login</a></li>
-                </ul>
+                <span v-if="!isLoggedIn()">
+                  <a href="/signup">Signup</a>
+                  <ul class="dropdown">
+                    <li><a href="./blog-details.html">Blog Details</a></li>
+                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                    <li><a href="./check-out.html">Checkout</a></li>
+                    <li><a href="./faq.html">Faq</a></li>
+                    <li><a href="./register.html">Register</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                  </ul>
+                </span>
               </li>
             </ul>
           </nav>
@@ -578,49 +573,8 @@
     </section>
     <!-- Man Banner Section End -->
 
-    <!-- Instagram Section Begin -->
-    <div class="instagram-photo">
-      <div class="insta-item set-bg" data-setbg="img/insta-1.jpg">
-        <div class="inside-text">
-          <i class="ti-instagram"></i>
-          <h5><a href="#">colorlib_Collection</a></h5>
-        </div>
-      </div>
-      <div class="insta-item set-bg" data-setbg="img/insta-2.jpg">
-        <div class="inside-text">
-          <i class="ti-instagram"></i>
-          <h5><a href="#">colorlib_Collection</a></h5>
-        </div>
-      </div>
-      <div class="insta-item set-bg" data-setbg="img/insta-3.jpg">
-        <div class="inside-text">
-          <i class="ti-instagram"></i>
-          <h5><a href="#">colorlib_Collection</a></h5>
-        </div>
-      </div>
-      <div class="insta-item set-bg" data-setbg="img/insta-4.jpg">
-        <div class="inside-text">
-          <i class="ti-instagram"></i>
-          <h5><a href="#">colorlib_Collection</a></h5>
-        </div>
-      </div>
-      <div class="insta-item set-bg" data-setbg="img/insta-5.jpg">
-        <div class="inside-text">
-          <i class="ti-instagram"></i>
-          <h5><a href="#">colorlib_Collection</a></h5>
-        </div>
-      </div>
-      <div class="insta-item set-bg" data-setbg="img/insta-6.jpg">
-        <div class="inside-text">
-          <i class="ti-instagram"></i>
-          <h5><a href="#">colorlib_Collection</a></h5>
-        </div>
-      </div>
-    </div>
-    <!-- Instagram Section End -->
-
     <!-- Latest Blog Section Begin -->
-    <section class="latest-blog spad">
+    <!-- <section class="latest-blog spad">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -732,7 +686,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Latest Blog Section End -->
 
     <!-- Partner Logo Section Begin -->
@@ -779,16 +733,16 @@
                 <a href="#"><img src="img/footer-logo.png" alt="" /></a>
               </div>
               <ul>
-                <li>Address: 60-49 Road 11378 New York</li>
-                <li>Phone: +65 11.188.888</li>
-                <li>Email: hello.colorlib@gmail.com</li>
+                <li>Address: 124 Conch Street, Bikini Bottom</li>
+                <li>Phone: 678.999.8212</li>
+                <li>Email: info@bookstash.com</li>
               </ul>
-              <div class="footer-social">
+              <!-- <div class="footer-social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-pinterest"></i></a>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="col-lg-2 offset-lg-1">
@@ -796,9 +750,9 @@
               <h5>Information</h5>
               <ul>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Checkout</a></li>
+                <!-- <li><a href="#">Checkout</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Serivius</a></li>
+                <li><a href="#">Serivius</a></li> -->
               </ul>
             </div>
           </div>
@@ -807,39 +761,20 @@
               <h5>My Account</h5>
               <ul>
                 <li><a href="#">My Account</a></li>
-                <li><a href="#">Contact</a></li>
+                <!-- <li><a href="#">Contact</a></li>
                 <li><a href="#">Shopping Cart</a></li>
-                <li><a href="#">Shop</a></li>
+                <li><a href="#">Shop</a></li> -->
               </ul>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="newslatter-item">
               <h5>Join Our Newsletter Now</h5>
-              <p>Get E-mail updates about our latest shop and special offers.</p>
+              <p>Get E-mail updates with the newest personalized book recommendations.</p>
               <form action="#" class="subscribe-form">
                 <input type="text" placeholder="Enter Your Mail" />
                 <button type="button">Subscribe</button>
               </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="copyright-reserved">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="copyright-text">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy; All rights reserved | This template is made with
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                by
-                <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </div>
-              <div class="payment-pic">
-                <img src="img/payment-method.png" alt="" />
-              </div>
             </div>
           </div>
         </div>
