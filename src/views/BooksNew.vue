@@ -37,6 +37,7 @@ export default {
       author_name: "",
       genre: "",
       img_url: "",
+      overview: "",
       errors: [],
     };
   },
@@ -52,6 +53,7 @@ export default {
         author_name: this.author_name,
         genre: this.genre,
         img_url: this.img_url,
+        overview: this.overview,
       };
       axios
         .post("/api/books", params)

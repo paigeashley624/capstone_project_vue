@@ -53,6 +53,7 @@ export default {
         author_name: book.author_name,
         genre: book.genre,
         img_url: book.img_url,
+        overview: book.overview,
       };
       axios
         .patch("/api/books/" + this.$route.params.id, params)
