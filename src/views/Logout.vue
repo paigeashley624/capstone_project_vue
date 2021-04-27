@@ -1,5 +1,5 @@
 <template>
-  <div class="logout"></div>
+  <div class="logout"><router-link to="/">Logout</router-link></div>
 </template>
 
 <script>
