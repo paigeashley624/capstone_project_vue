@@ -34,7 +34,7 @@
                 <button type="submit" class="site-btn login-btn" v-on:click="submit()">Sign In</button>
               </form>
               <div class="switch-login">
-                <a href="./register.html" class="or-login">Or Create An Account</a>
+                <a href="/signup" class="or-login">Or Create An Account</a>
               </div>
             </div>
           </div>

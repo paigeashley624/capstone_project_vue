@@ -109,7 +109,7 @@
     <div class="partner-logo">
       <div class="container">
         <div class="logo-carousel owl-carousel">
-          <div class="logo-item">
+          <!-- <div class="logo-item">
             <div class="tablecell-inner">
               <img src="img/logo-carousel/logo-1.png" alt="" />
             </div>
@@ -133,7 +133,7 @@
             <div class="tablecell-inner">
               <img src="img/logo-carousel/logo-5.png" alt="" />
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -145,9 +145,9 @@
         <div class="row">
           <div class="col-lg-3">
             <div class="footer-left">
-              <div class="footer-logo">
+              <!-- <div class="footer-logo">
                 <a href="#"><img src="img/footer-logo.png" alt="" /></a>
-              </div>
+              </div> -->
               <ul>
                 <li>Address: 124 Conch Street, Bikini Bottom</li>
                 <li>Phone: 678.999.8212</li>

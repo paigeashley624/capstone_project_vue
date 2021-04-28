@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
+    <!-- <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
         <li class="text-danger" v-for="error in errors" v-bind:key="error">
@@ -24,7 +24,38 @@
         <input type="password" class="form-control" v-model="passwordConfirmation" />
       </div>
       <input type="submit" class="btn btn-primary" value="Submit" />
-    </form>
+    </form> -->
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <div class="register-form">
+              <h2>Register</h2>
+              <form action="#">
+                <div class="group-input">
+                  <label for="username">Email address *</label>
+                  <input type="email" v-model="email" />
+                </div>
+                <div class="group-input">
+                  <label for="pass">Password *</label>
+                  <input type="password" v-model="password" />
+                </div>
+                <div class="group-input">
+                  <label for="con-pass">Confirm Password *</label>
+                  <input type="password" v-model="passwordConfirmation" />
+                </div>
+                <button type="submit" class="site-btn register-btn" v-on:click="submit()">REGISTER</button>
+              </form>
+              <div class="switch-login">
+                <a href="/login" class="or-login">Or Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Register Form Section End -->
   </div>
 </template>
 
