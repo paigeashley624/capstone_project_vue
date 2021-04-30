@@ -1,8 +1,8 @@
 <template>
   <div class="books-show">
     <div class="container">
-      <div>
-        <h2>{{ user.user_books }}</h2>
+      <div v-for="x in user.user_books" :key="x.id">
+        <h2>{{ x.book.title }}</h2>
       </div>
       <!-- <p>{{ book.author_name }} | {{ book.genre }}</p>
       <img v-bind:src="book.img_url" v-bind:alt="book.title" />
@@ -23,6 +23,7 @@ export default {
   data: function () {
     return {
       user: {},
+      book: {},
     };
   },
   created: function () {
