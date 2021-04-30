@@ -14,9 +14,11 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-3">
-            <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+            <div class="product-large set-bg" data-setbg="img/products/readingbook.jpg">
               <h2>BookStash</h2>
+              <!-- <router-link> -->
               <a href="#">Discover New Books</a>
+              <!-- </router-link> -->
             </div>
           </div>
           <div class="col-lg-8 offset-lg-1">
@@ -68,7 +70,6 @@
 
 <script>
 import axios from "axios";
-
 export default {
   data: function () {
     return {
