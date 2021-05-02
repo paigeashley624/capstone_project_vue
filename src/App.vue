@@ -75,12 +75,12 @@
               <li class="active"><router-link to="/">Home</router-link></li>
               <!-- <li><a href="./shop.html">test</a></li> -->
               <li>
-                <a href="#">Stash</a>
-                <ul class="dropdown">
+                <router-link to="/users/">Stash</router-link>
+                <!-- <ul class="dropdown">
                   <li><a href="#">Men's</a></li>
                   <li><a href="#">Women's</a></li>
                   <li><a href="#">Kid's</a></li>
-                </ul>
+                </ul> -->
               </li>
               <li><a href="./blog.html">Browse</a></li>
               <li><a href="./contact.html">Contact</a></li>
