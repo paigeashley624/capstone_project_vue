@@ -34,7 +34,11 @@
               <h2>Register</h2>
               <form action="#">
                 <div class="group-input">
-                  <label for="username">Email address *</label>
+                  <label for="name">Name *</label>
+                  <input type="name" v-model="name" />
+                </div>
+                <div class="group-input">
+                  <label for="email">Email address *</label>
                   <input type="email" v-model="email" />
                 </div>
                 <div class="group-input">

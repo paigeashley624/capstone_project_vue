@@ -75,7 +75,7 @@
               <li class="active"><router-link to="/">Home</router-link></li>
               <!-- <li><a href="./shop.html">test</a></li> -->
               <li>
-                <router-link to="/users/">Stash</router-link>
+                <router-link v-bind:to="`/users/${getUserId()}`">Stash</router-link>
                 <!-- <ul class="dropdown">
                   <li><a href="#">Men's</a></li>
                   <li><a href="#">Women's</a></li>
@@ -204,6 +204,11 @@
 
 <script>
 export default {
+  data: function () {
+    return {
+      user: {},
+    };
+  },
   methods: {
     isLoggedIn: function () {
       return localStorage.getItem("jwt");
