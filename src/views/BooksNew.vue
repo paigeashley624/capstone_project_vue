@@ -59,7 +59,7 @@ export default {
         overview: this.overview,
       };
       axios
-        .post("/api/books", params)
+        .post("/api/books/new", params)
         .then(() => {
           this.$router.push("/");
         })

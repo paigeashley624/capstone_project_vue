@@ -5,8 +5,8 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import BooksEdit from "../views/BooksEdit.vue";
-import BooksShow from "../views/BooksShow.vue";
 import BooksNew from "../views/BooksNew.vue";
+import BooksShow from "../views/BooksShow.vue";
 import UserShow from "../views/UserShow.vue";
 
 Vue.use(VueRouter);
@@ -27,8 +27,8 @@ const routes = [
   { path: "/logout", name: "logout", component: Logout },
 
   { path: "/books/:id/edit", name: "books-edit", component: BooksEdit },
+  { path: "/books/new", name: "books-new", component: BooksNew },
   { path: "/books/:id", name: "books-show", component: BooksShow },
-  { path: "/booksnew", name: "books-new", component: BooksNew },
 
 
   { path: "/users/:id", name: "user-show", component: UserShow },
