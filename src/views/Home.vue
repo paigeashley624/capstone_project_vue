@@ -1,6 +1,9 @@
 // Home.vue = All Books
 <template>
   <div class="home">
+    Search by title:
+    <input v-model="searchFilter" />
+
     <!-- <div v-for="book in books" v-bind:key="book.id">
       <router-link v-bind:to="`books/${book.id}`">
         <h2>{{ book.title }}</h2>
@@ -34,7 +37,11 @@
             <div class="owl-stage-outer">
               <!-- <div class="owl-stage" style="transform"> -->
               <!-- <div class="owl-item cloned" style="width: 273.776px; marging-right: 25px"> -->
-              <div class="product-item" v-for="book in books" v-bind:key="book.id">
+              <div
+                class="product-item"
+                v-for="book in filterBy(books, searchFilter, 'title', 'genre', 'author_name')"
+                v-bind:key="book.id"
+              >
                 <div class="pi-pic">
                   <router-link v-bind:to="`books/${book.id}`">
                     <img v-bind:src="book.img_url" v-bind:alt="book.title" />
@@ -78,12 +85,17 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
   data: function () {
     return {
       books: [],
+      searchFilter: "",
     };
   },
+  mixins: [Vue2Filters.mixin],
+
   created: function () {
     this.indexBooks();
   },
