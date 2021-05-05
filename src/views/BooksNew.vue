@@ -45,8 +45,6 @@ export default {
     };
   },
 
-  // new book currently routes back home but this may need to change later. use booksnew in browser instead of books/new.
-  // this should only be an admin feature by the time the app is complete.
   created: function () {},
   methods: {
     createBook: function () {

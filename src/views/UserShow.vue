@@ -19,6 +19,11 @@
     <!-- Product Shop Section Begin -->
     <section class="product-shop spad">
       <div class="container">
+        <select name="bookSort" id="bookSort">
+          <option value="read">Read</option>
+          <option value="reading">Reading</option>
+          <option value="future read">Future Read</option>
+        </select>
         <div class="row">
           <div class="col-lg-9 order-1 order-lg-2">
             <div class="product-list">
@@ -30,15 +35,16 @@
                       <div class="icon">
                         <i class="icon_heart_alt"></i>
                       </div>
-                      <ul>
-                        <li class="w-icon active">
+                      <!-- <ul> -->
+
+                      <!-- <li class="w-icon active">
                           <a href="#"><i class="icon_bag_alt"></i></a>
-                        </li>
-                        <li class="quick-view"><a href="#">+ Quick View</a></li>
-                        <li class="w-icon">
+                        </li> -->
+                      <!-- <li class="quick-view"><a href="#">+ Quick View</a></li> -->
+                      <!-- <li class="w-icon">
                           <a href="#"><i class="fa fa-random"></i></a>
-                        </li>
-                      </ul>
+                        </li> -->
+                      <!-- </ul> -->
                     </div>
                     <div class="pi-text">
                       <div class="catagory-name">{{ book.book.genre }}</div>
@@ -48,6 +54,7 @@
                       <!-- </router-link> -->
                       <div class="product-price">
                         {{ book.book.author_name }}
+                        <h6>{{ book.status }}</h6>
                       </div>
                     </div>
                   </div>
@@ -91,7 +98,7 @@ export default {
       });
     },
 
-    // added to try to get the book to route to its own show page when clicked
+    // added to try to get the book to route to its own show page when clicked. Incomplete
     showBook: function () {
       axios.get("/api/books/" + this.$route.params.id).then((response) => {
         console.log(response.data);
