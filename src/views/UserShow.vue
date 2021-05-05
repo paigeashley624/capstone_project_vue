@@ -32,9 +32,9 @@
                   <div class="product-item">
                     <div class="pi-pic">
                       <img v-bind:src="book.book.img_url" v-bind:alt="book.book.title" />
-                      <div class="icon">
+                      <!-- <div class="icon">
                         <i class="icon_heart_alt"></i>
-                      </div>
+                      </div> -->
                       <!-- <ul> -->
 
                       <!-- <li class="w-icon active">
@@ -57,6 +57,11 @@
                         <h6>{{ book.status }}</h6>
                       </div>
                     </div>
+                    <!-- <div v-if="$parent.getUserId() == book.user_id">
+                      <router-link v-bind:to="`/books/${book.id}/edit`"></router-link>
+                      <br />
+                      <button v-on:click="destroyBook(book)"></button>
+                    </div> -->
                   </div>
                 </div>
               </div>

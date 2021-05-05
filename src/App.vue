@@ -84,11 +84,11 @@
               <li class="active"><router-link to="/">Home</router-link></li>
               <li>
                 <router-link v-bind:to="`/users/${getUserId()}`">Stash</router-link>
-                <ul class="dropdown">
+                <!-- <ul class="dropdown">
                   <li><a href="#">Read</a></li>
                   <li><a href="#">Reading</a></li>
                   <li><a href="#">Future Read</a></li>
-                </ul>
+                </ul> -->
               </li>
               <!-- <li><a href="./shop.html">test</a></li> -->
               <li><a href="/">Browse</a></li>

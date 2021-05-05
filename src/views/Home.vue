@@ -109,7 +109,7 @@
                           <!-- <li class="w-icon active">
                             <a href="#"><i class="icon_bag_alt"></i></a>
                           </li> -->
-                          <li class="quick-view"><button v-on:click="addToStash()">+ Add to Stash</button></li>
+                          <li class="quick-view"><button v-on:click="addToStash(book)">+ Add to Stash</button></li>
                           <!-- <li class="w-icon">
                             <a href="#"><i class="fa fa-random"></i></a>
                           </li> -->
@@ -209,18 +209,17 @@ export default {
     },
 
     // trying to add in order to add a book to a users account. Incomplete
-    addToStash: function () {
-      console.log("book being created");
+    addToStash: function (book) {
+      console.log("book being added to stash");
+
       var params = {
-        title: this.title,
-        author_name: this.author_name,
-        genre: this.genre,
-        img_url: this.img_url,
-        overview: this.overview,
+        user_id: localStorage.getItem("user_id"),
+        book_id: book.id,
+        status: "Future Read",
       };
-      axios.post("/api/users/", +user.id).then(() => {
-        this.$router.push("/users/" + this.$route.params.id);
-      });
+
+      // the below posts to the backend
+      axios.post("/api/user_books/", params).catch((error) => console.log(error.response));
     },
   },
 };
