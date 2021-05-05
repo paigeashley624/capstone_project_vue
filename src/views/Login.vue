@@ -12,7 +12,7 @@
             </ul>
             <div class="login-form">
               <h2>Login</h2>
-              <form action="#">
+              <form v-on:submit.prevent="submit()">
                 <div class="group-input">
                   <label for="username">Email Address *</label>
                   <input type="email" v-model="email" />

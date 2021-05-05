@@ -109,7 +109,9 @@
                           <!-- <li class="w-icon active">
                             <a href="#"><i class="icon_bag_alt"></i></a>
                           </li> -->
-                          <li class="quick-view"><button v-on:click="addToStash(book)">+ Add to Stash</button></li>
+                          <li class="quick-view">
+                            <button v-on:click="addToStash(book)">+ Add to Stash</button>
+                          </li>
                           <!-- <li class="w-icon">
                             <a href="#"><i class="fa fa-random"></i></a>
                           </li> -->
@@ -134,6 +136,7 @@
       </div>
     </section>
     <!-- Women Banner Section End -->
+
     <!-- Product Shop Section Begin -->
     <!-- <section class="product-shop spad">
       <div class="container">
@@ -218,7 +221,7 @@ export default {
         status: "Future Read",
       };
 
-      // the below posts to the backend
+      // axios post are sending to the backend
       axios.post("/api/user_books/", params).catch((error) => console.log(error.response));
     },
   },

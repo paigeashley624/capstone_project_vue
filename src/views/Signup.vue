@@ -25,6 +25,7 @@
       </div>
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form> -->
+
     <!-- Register Section Begin -->
     <div class="register-login-section spad">
       <div class="container">
@@ -32,7 +33,12 @@
           <div class="col-lg-6 offset-lg-3">
             <div class="register-form">
               <h2>Register</h2>
-              <form action="#">
+              <form v-on:submit.prevent="submit()">
+                <ul>
+                  <li class="text-danger" v-for="error in errors" v-bind:key="error">
+                    {{ error }}
+                  </li>
+                </ul>
                 <div class="group-input">
                   <label for="name">Name *</label>
                   <input type="name" v-model="name" />

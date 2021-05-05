@@ -16,7 +16,7 @@
       <button v-on:click="destroyBook(book)"></button>
     </div> -->
     <!-- Product Shop Section Begin -->
-    <!-- Product Shop Section Begin -->
+
     <section class="product-shop spad">
       <div class="container">
         <select name="bookSort" id="bookSort">
@@ -104,12 +104,12 @@ export default {
     },
 
     // added to try to get the book to route to its own show page when clicked. Incomplete
-    showBook: function () {
-      axios.get("/api/books/" + this.$route.params.id).then((response) => {
-        console.log(response.data);
-        this.book = response.data;
-      });
-    },
+    // showBook: function () {
+    //   axios.get("/api/books/" + this.$route.params.id).then((response) => {
+    //     console.log(response.data);
+    //     this.book = response.data;
+    //   });
+    // },
   },
 };
 </script>
