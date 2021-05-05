@@ -48,14 +48,14 @@
                     </div>
                     <div class="pi-text">
                       <div class="catagory-name">{{ book.book.genre }}</div>
-                      <!-- <router-link v-bind:to="`${showBook()}`"> -->
-                      <!-- unable to get the correct route righ now  -->
-                      <h5>{{ book.book.title }}</h5>
-                      <!-- </router-link> -->
-                      <div class="product-price">
-                        {{ book.book.author_name }}
-                        <h6>{{ book.status }}</h6>
-                      </div>
+                      <router-link v-bind:to="`/books/${book.book.id}`">
+                        <!-- unable to get the correct route right now  -->
+                        <h5>{{ book.book.title }}</h5>
+                        <div class="product-price">
+                          {{ book.book.author_name }}
+                          <h6>{{ book.status }}</h6>
+                        </div>
+                      </router-link>
                     </div>
                     <!-- <div v-if="$parent.getUserId() == book.user_id">
                       <router-link v-bind:to="`/books/${book.id}/edit`"></router-link>

@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-lg-3 col-md-2">
             <div class="logo">
-              <a href="./index.html">
+              <a href="/">
                 <img src="img/newlogo1.png" alt="" />
               </a>
             </div>
