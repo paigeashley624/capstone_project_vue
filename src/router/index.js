@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue";
 import BooksEdit from "../views/BooksEdit.vue";
 import BooksNew from "../views/BooksNew.vue";
 import BooksShow from "../views/BooksShow.vue";
+import UserEdit from "../views/UserEdit.vue";
 import UserShow from "../views/UserShow.vue";
 
 Vue.use(VueRouter);
@@ -31,6 +32,7 @@ const routes = [
   { path: "/books/:id", name: "books-show", component: BooksShow },
 
 
+  { path: "/users/:id/edit", name: "users-edit", component: UserEdit },
   { path: "/users/:id", name: "user-show", component: UserShow },
 ]
 

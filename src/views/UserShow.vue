@@ -49,7 +49,6 @@
                     <div class="pi-text">
                       <div class="catagory-name">{{ book.book.genre }}</div>
                       <router-link v-bind:to="`/books/${book.book.id}`">
-                        <!-- unable to get the correct route right now  -->
                         <h5>{{ book.book.title }}</h5>
                         <div class="product-price">
                           {{ book.book.author_name }}
@@ -57,11 +56,13 @@
                         </div>
                       </router-link>
                     </div>
-                    <!-- <div v-if="$parent.getUserId() == book.user_id">
-                      <router-link v-bind:to="`/books/${book.id}/edit`"></router-link>
+
+                    <!-- needs to be fixed -->
+                    <div v-if="$parent.getUserId() == book.user_id">
+                      <router-link v-bind:to="`/user_books/${book.id}/edit`"></router-link>
                       <br />
-                      <button v-on:click="destroyBook(book)"></button>
-                    </div> -->
+                      <button v-on:click="destroyUserBooks(book)">Delete</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -96,10 +97,10 @@ export default {
         this.user = response.data;
       });
     },
-    destroyUserBooks: function (user) {
-      axios.delete("/api/users/" + user.id).then(() => {
+    destroyUserBooks: function (book) {
+      axios.delete("/api/user_books/" + book.id).then(() => {
         console.log("delete works, yay!");
-        this.$router.push("/users");
+        this.user.user_books.splice(this.user.user_books.indexOf(book), 1);
       });
     },
 

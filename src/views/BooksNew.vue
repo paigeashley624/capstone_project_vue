@@ -56,8 +56,10 @@ export default {
         img_url: this.img_url,
         overview: this.overview,
       };
+
+      // the below was not working due to .post being set to /api/books/new... the ".post" needs to match the backend route NOT the frontend. ".then" is where you would like to route back to after you perform the action.
       axios
-        .post("/api/books/new", params)
+        .post("/api/books", params)
         .then(() => {
           this.$router.push("/");
         })
