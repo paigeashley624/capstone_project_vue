@@ -32,19 +32,24 @@
                   <div class="product-item">
                     <div class="pi-pic">
                       <img v-bind:src="book.book.img_url" v-bind:alt="book.book.title" />
-                      <!-- <div class="icon">
+                      <div class="icon">
                         <i class="icon_heart_alt"></i>
-                      </div> -->
-                      <!-- <ul> -->
-
-                      <!-- <li class="w-icon active">
+                      </div>
+                      -->
+                      <ul>
+                        <!-- <li class="w-icon active">
                           <a href="#"><i class="icon_bag_alt"></i></a>
                         </li> -->
-                      <!-- <li class="quick-view"><a href="#">+ Quick View</a></li> -->
-                      <!-- <li class="w-icon">
+                        <div>
+                          <router-link v-bind:to="`/user_books/${book.id}/edit`"></router-link>
+                          <li class="quick-view" v-if="$parent.getUserId() == book.user_id">
+                            <button v-on:click="destroyUserBooks(book)">Delete</button>
+                          </li>
+                        </div>
+                        <!-- <li class="w-icon">
                           <a href="#"><i class="fa fa-random"></i></a>
                         </li> -->
-                      <!-- </ul> -->
+                      </ul>
                     </div>
                     <div class="pi-text">
                       <div class="catagory-name">{{ book.book.genre }}</div>
@@ -57,12 +62,11 @@
                       </router-link>
                     </div>
 
-                    <!-- needs to be fixed -->
-                    <div v-if="$parent.getUserId() == book.user_id">
+                    <!-- <div v-if="$parent.getUserId() == book.user_id">
                       <router-link v-bind:to="`/user_books/${book.id}/edit`"></router-link>
                       <br />
                       <button v-on:click="destroyUserBooks(book)">Delete</button>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -99,18 +103,10 @@ export default {
     },
     destroyUserBooks: function (book) {
       axios.delete("/api/user_books/" + book.id).then(() => {
-        console.log("delete works, yay!");
+        console.log("The book has now been sent to the book graveyard. RIP book");
         this.user.user_books.splice(this.user.user_books.indexOf(book), 1);
       });
     },
-
-    // added to try to get the book to route to its own show page when clicked. Incomplete
-    // showBook: function () {
-    //   axios.get("/api/books/" + this.$route.params.id).then((response) => {
-    //     console.log(response.data);
-    //     this.book = response.data;
-    //   });
-    // },
   },
 };
 </script>

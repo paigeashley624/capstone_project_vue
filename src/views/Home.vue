@@ -89,7 +89,7 @@
             </div>
           </div> -->
           <!-- carousel end  -->
-          <div class="col-lg-7 order-1 order-lg-3 offset-lg-1">
+          <div class="col-lg-6 order-1 order-lg-3 offset-lg-1">
             <div>
               <div class="product-list">
                 <div class="row">
@@ -102,9 +102,9 @@
                         <router-link v-bind:to="`books/${book.id}`">
                           <img v-bind:src="book.img_url" v-bind:alt="book.title" />
                         </router-link>
-                        <div class="icon">
+                        <!-- <div class="icon">
                           <i class="icon_heart_alt"></i>
-                        </div>
+                        </div> -->
                         <ul>
                           <!-- <li class="w-icon active">
                             <a href="#"><i class="icon_bag_alt"></i></a>
