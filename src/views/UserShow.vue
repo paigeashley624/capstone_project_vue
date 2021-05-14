@@ -19,11 +19,12 @@
 
     <section class="product-shop spad">
       <div class="container">
-        <select name="bookSort" id="bookSort">
+        <!-- drop down filter to be completed at a later time  -->
+        <!-- <select name="bookSort" id="bookSort">
           <option value="read">Read</option>
           <option value="reading">Reading</option>
           <option value="future read">Future Read</option>
-        </select>
+        </select> -->
         <div class="row">
           <div class="col-lg-9 order-1 order-lg-2">
             <div class="product-list">

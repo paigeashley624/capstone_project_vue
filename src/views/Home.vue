@@ -215,7 +215,6 @@ export default {
       });
     },
 
-    // trying to add in order to add a book to a users account. Incomplete
     addToStash: function (book) {
       console.log("book being added to stash");
 

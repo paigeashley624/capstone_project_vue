@@ -43,7 +43,7 @@
                         <!-- <li class="w-icon active">
                           <a href="#"><i class="icon_bag_alt"></i></a>
                         </li> -->
-                        <li class="quick-view"><button v-on:click="addToStash()">+ Add to Stash</button></li>
+                        <li class="quick-view"><button v-on:click="addToStash(book)">+ Add to Stash</button></li>
                         <!-- <li class="w-icon">
                           <a href="#"><i class="fa fa-random"></i></a>
                         </li> -->
@@ -94,6 +94,18 @@ export default {
         console.log("delete works, yay!");
         this.$router.push("/books");
       });
+    },
+    addToStash: function (book) {
+      console.log("book being added to stash");
+
+      var params = {
+        user_id: localStorage.getItem("user_id"),
+        book_id: book.id,
+        status: "Future Read",
+      };
+
+      // axios post are sending to the backend
+      axios.post("/api/user_books/", params).catch((error) => console.log(error.response));
     },
   },
 };
