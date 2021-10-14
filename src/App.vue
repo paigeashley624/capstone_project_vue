@@ -44,10 +44,12 @@
             </div>
           </div>
           <div class="ht-right">
-            <span v-if="!isLoggedIn()">
+            <!-- <span v-if="!isLoggedIn()"> -->
+            <span>
+              <router-link to="/login">Login Vue</router-link>
               <a href="/login" class="login-panel">
                 <i class="fa fa-user"></i>
-                Login
+                Login HTML
               </a>
             </span>
             <span v-else>
