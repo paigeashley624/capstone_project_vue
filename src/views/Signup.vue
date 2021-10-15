@@ -58,7 +58,9 @@
                 <button type="submit" class="site-btn register-btn" v-on:click="submit()">REGISTER</button>
               </form>
               <div class="switch-login">
-                <a href="/login" class="or-login">Or Login</a>
+              <router-link to="/login"class="or-login">
+Or Login
+                <!-- <a href="/login" class="or-login">Or Login</a> -->
               </div>
             </div>
           </div>
