@@ -55,12 +55,12 @@
                   <label for="con-pass">Confirm Password *</label>
                   <input type="password" v-model="passwordConfirmation" />
                 </div>
-                <button type="submit" class="site-btn register-btn" v-on:click="submit()">REGISTER</button>
+                <button button type="submit" class="site-btn register-btn" v-on:click="submit()">REGISTER</button>
               </form>
               <div class="switch-login">
-              <router-link to="/login"class="or-login">
-Or Login
-                <!-- <a href="/login" class="or-login">Or Login</a> -->
+              <router-link to="/login" class="or-login">
+                Or Login
+              
               </div>
             </div>
           </div>
